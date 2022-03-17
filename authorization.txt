@@ -1,0 +1,10 @@
+authorization means showing the user the related thing in the first 
+we can create a campground if the user is logged in and the present user_id is given
+in the given campground we add the object Id of the given user 
+so that it shows the given username who created the given campground
+and next we remove the delete and edit button if you have not created the given campground
+and  we give the permission like if you belong to give user then u  are able to operate the given operations
+/////////////////////////////////////////////////////////////////////////////
+the one more thing we can do is
+requesting the page url like adding the given orginalPath to the session
+and redirecting to the given sessoin orginalPath

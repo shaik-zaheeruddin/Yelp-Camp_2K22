@@ -1,0 +1,17 @@
+when we create passport first we need to require passport mongoose
+then we have to provide additional information and then we 
+can use passportLocalMongoose and then plugin in to the given schema
+and then we have add initialize and session 
+and all of those things
+the main thing is
+UserModel.register(userSchema,password)
+passport.authenticate('local',{failureFlash:true, failureRedirect:'path'})
+adds userId to the session
+after this
+req.isAuthenticate()
+returns true if the userId is present in the session
+req.user returns full userobject
+and 
+req.logout()
+destroys the session
+req.login(adds to the session)

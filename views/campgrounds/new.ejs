@@ -1,0 +1,67 @@
+<% layout('layouts/boilerplate.ejs') %>
+    <h1 class="text-center">Create Campground</h1>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <!-- encytp is because of infput file -->
+            <form action="/campgrounds" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" id="title" name="campground[title]" class="form-control" placeholder="Title"
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" id="location" name="campground[location]" class="form-control"
+                        placeholder="Location" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <!-- <div class="mb-3">
+                    <label for="image" class="form-label">Image URL</label>
+                    <input type="text" id="location" name="campground[image]" class="form-control"
+                        placeholder="Add Image" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+               </div> -->
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Add Image</label>
+                    <input class="form-control" type="file" id="formFile" name="image" multiple>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <div class="input-group mb-3">
+
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">$</span>
+                        </div>
+
+                        <input type="text" class="form-control" placeholder="0.00" aria-label="Price"
+                            aria-describedby="basic-addon1" id="price" name="campground[price]" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea id="description" class="form-control" placeholder="Add Description"
+                        name="campground[description]" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <button class="btn btn-success">Add Campground</button>
+                </div>
+
+            </form>
+            <a href="/campgrounds" class="mt-3">All Campgrounds</a>
+        </div>
+    </div>
