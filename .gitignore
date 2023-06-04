@@ -1,3 +1,6 @@
 node_modules
 .env
 .vercel
+hello.txt
+authorization.txt
+readme.txt
