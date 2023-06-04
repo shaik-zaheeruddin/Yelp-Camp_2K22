@@ -1,56 +1,52 @@
 <% layout('layouts/boilerplate')%>
-    <div id="cluster-map"></div>
-    <h1 class="text-center mt-3 mb-3">All Campgrounds</h1>
-    <ul>
-        <% for (let campground of campgrounds){%>
-            <div class="card mb-3">
-                <div class="row">
-                    <div class="col-md-4">
-                        <% if(campground.image.length){ %>
-                            <img src="<%= campground.image[0].url%>" class="img-fluid" alt="" />
-                            <% } else{%>
-                                <img src="https://res.cloudinary.com/dzfnqx1um/image/upload/v1647231443/YelpCamp/lcinly5la149ctcd6im5.webp"
-                                    alt="" class="img-fluid">
-                                <% } %>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <%=campground.title %>
-                            </h5>
-                            <p class="card-text">
-                                <%= campground.description %>
-                            </p>
-                            <p class="card-text">
-                                <small class="text-muted">
-                                    <%= campground.location %>
-                                </small>
-                            </p>
-                            <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">
-                                view <%= campground.title%>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+<div id="cluster-map"></div>
+<h1 class="text-center mt-3 mb-3">All Campgrounds</h1>
+<ul>
+  <% for (let campground of campgrounds){%>
+  <div class="card mb-3">
+    <div class="row">
+      <div class="col-md-4">
+        <% if(campground.image.length){ %>
+        <img src="<%= campground.image[0].url%>" class="img-fluid" alt="" />
+        <% } else{%>
+        <img
+          src="https://res.cloudinary.com/dzfnqx1um/image/upload/v1647231443/YelpCamp/lcinly5la149ctcd6im5.webp"
+          alt=""
+          class="img-fluid"
+        />
+        <% } %>
+      </div>
+      <div class="col-md-8 d-flex justify-content-center align-items-center">
+        <div class="card-body">
+          <h5 class="card-title"><%=campground.title %></h5>
+          <p class="card-text"><%= campground.description %></p>
+          <p class="card-text">
+            <small class="text-muted"> <%= campground.location %> </small>
+          </p>
+          <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">
+            view <%= campground.title%>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% }%>
+</ul>
 
-            </div>
-            <% }%>
-    </ul>
+<script>
+  const mapToken = '<%- process.env.token   %>';
+  const camps = { features: <%- JSON.stringify(campgrounds) %>};
+  //what we are doing here is actually
+  /*
+  this
+  {
+  features :
 
-    <script>
-        const mapToken = '<%- process.env.token   %>';
-        const camps = { features: <%- JSON.stringify(campgrounds) %>};
-        //what we are doing here is actually 
-        /*
-        this
-        {
-        features :
-        
-        }
-        not this
-        features:{
-        }
-        key:value cant be present out side of the object 
-        */
-    </script>
-    <script src="/javascript/mapcluster.js"></script>
+  }
+  not this
+  features:{
+  }
+  key:value cant be present out side of the object
+  */
+</script>
+<script src="/javascript/mapcluster.js"></script>
