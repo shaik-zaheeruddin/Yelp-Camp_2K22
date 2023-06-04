@@ -1,6 +1,11 @@
 node_modules
 .env
 .vercel
-hello.txt
-authorization.txt
-readme.txt
+
+./hello.txt
+
+./authorization.txt
+
+./passport.text
+
+./readme.txt
