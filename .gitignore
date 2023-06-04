@@ -4,7 +4,7 @@ node_modules
 
 ./hello.txt
 
-./authorization.txt
+authorization.txt
 
 ./passport.text
 
