@@ -12,7 +12,9 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/app.css" />
-
+    <meta property="og:title" content="<%-campground.title %>" />
+    <meta property="og:description" content="<%- campground.description%>" />
+    <meta property="og:image" content="<%- campground.image[0].url%>" />
     <style>
       .errorClass {
         word-break: break-all;
